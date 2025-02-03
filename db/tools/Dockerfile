@@ -1,5 +1,5 @@
 FROM alpine/psql:latest
 
-RUN apt-get update && apt-get install -y -iputils-ping dnsutils
+RUN apk update && apk add -y --no-cache iputils-ping bind-tools wget
 
 ENTRYPOINT ["tail", "-f", "/dev/null"]
